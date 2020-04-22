@@ -5,7 +5,37 @@ TODO:
 - replace Working SOftware references
 - prepare this readme
 - prepare the tests
+- check that renovate and travis are running
+- steps description
 
+---
+
+## Talk walkthrough:
+
+#### 1 - Cypress UI
+
+Topics:
+- the Cypress Test List UI: allows easy test selection
+- the Cypress Test Runner UI: allows understanding what happens in the app and in Cypress
+- the Cypress [skip-and-only plugin](https://github.com/bahmutov/cypress-skip-and-only-ui): allows to add `skip` and `only` from the Test Runner
+
+#### 2 - Cypress works in the browser
+
+There is not an orchestrating Bash script and an orchestrated browser, the tests work directly in the browser.
+
+Topics:
+- everything works in the browser: you do not need to go back and forth from the Bash to the browser
+- everything is logged inside the browser' console: you do not need to aggregate logs anymore
+- easier command understanding: less tools means more trivial understanding and debugging
+
+Examples:
+- logging from the test
+- logging from the app
+- accessing document.window' properties from the test
+- rich assertion results are logged too
+
+---
+---
 ---
 
 [![Build Status](https://travis-ci.com/NoriSte/frontend-testing-on-steroids.svg?branch=master)](https://travis-ci.com/NoriSte/frontend-testing-on-steroids)
