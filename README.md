@@ -46,7 +46,7 @@ Topics:
 - there are not sync/async differences, everything is async by definition
 - automatic waiting
 
-Example:
+Examples:
 
 - retrieving and interacting with an element
 - asserting about an element visibility
