@@ -15,6 +15,7 @@ TODO:
 #### 1 - Cypress UI
 
 Topics:
+
 - the Cypress Test List UI: allows easy test selection
 - the Cypress Test Runner UI: allows understanding what happens in the app and in Cypress
 - the Cypress [skip-and-only plugin](https://github.com/bahmutov/cypress-skip-and-only-ui): allows to add `skip` and `only` from the Test Runner
@@ -24,18 +25,36 @@ Topics:
 There is not an orchestrating Bash script and an orchestrated browser, the tests work directly in the browser.
 
 Topics:
+
 - everything works in the browser: you do not need to go back and forth from the Bash to the browser
 - everything is logged inside the browser' console: you do not need to aggregate logs anymore
 - easier command understanding: less tools means more trivial understanding and debugging
 
 Examples:
+
 - logging from the test
 - logging from the app
 - accessing document.window' properties from the test
 - rich assertion results are logged too
 
+#### 3 - Everything is async in UI testing
+
+Everything is asynchronous by definition in browserland
+
+Topics:
+
+- there are not sync/async differences, everything is async by definition
+- automatic waiting
+
+Example:
+
+- retrieving and interacting with an element
+- asserting about an element visibility
+
 ---
+
 ---
+
 ---
 
 [![Build Status](https://travis-ci.com/NoriSte/frontend-testing-on-steroids.svg?branch=master)](https://travis-ci.com/NoriSte/frontend-testing-on-steroids)
