@@ -2,8 +2,6 @@ Front-end Testing on Steroids
 
 TODO:
 
-- replace Working SOftware references
-- prepare this readme
 - prepare the tests
 - check that renovate and travis are running
 - steps description
@@ -12,7 +10,20 @@ TODO:
 
 ---
 
-## Talk walkthrough:
+# Front-end Testing on Steroids
+
+[![Build Status](https://travis-ci.com/NoriSte/frontend-testing-on-steroids.svg?branch=master)](https://travis-ci.com/NoriSte/frontend-testing-on-steroids)
+[![Build
+Status](https://img.shields.io/badge/build%20cron-weekly-44cc11.svg)](https://travis-ci.com/NoriSte/frontend-testing-on-steroids)
+[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
+[![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
+
+Why testing a front-end application is so hard? What are the main challenges you need to face? Why do the tests fail without a clear reason?
+This talk is about good testing best practices and the tool that is become the de-facto standard of UI Testing: Cypress.
+
+Please note: this is the talk version of my ["Some UI testing problems and the Cypress way"](https://dev.to/noriste/some-ui-testing-problems-and-the-cypress-way-1167) article.
+
+## Talk walkthrough
 
 #### 1 - Cypress UI
 
@@ -98,33 +109,23 @@ Topics:
 - debugging with Chrome devtools
 - installing the React and Redux devtools
 
----
+#### Bonus point (without a dedicated branch)
+
+To leverage Cypress' full potential and have stable and useful tests there are a lot of UI Testing best practices.
+
+Topics:
+
+- retrieving elements by their contents: consuming the app the same way the user does is really important in order to have user-centered tests
+- AJAX request and response assertions: asserting about AJAX requests alleviates test failure debugging
+- clock management: long duration tasks could be fastly tested by controlling browser clock
+- running E2E tests just for the happy path: running a limited number of E2E tests saves you a lot of time
+
+Examples:
+
+- full UI Integration tests
+- full E2E tests
 
 ---
-
----
-
-[![Build Status](https://travis-ci.com/NoriSte/frontend-testing-on-steroids.svg?branch=master)](https://travis-ci.com/NoriSte/frontend-testing-on-steroids)
-[![Build
-Status](https://img.shields.io/badge/build%20cron-weekly-44cc11.svg)](https://travis-ci.com/NoriSte/frontend-testing-on-steroids)
-[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
-[![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
-
-- [Goal of this repository](#Goal-of-this-repository)
-- [About this repository](#About-this-repository)
-- [How to play with it](#How-to-play-with-it)
-- [How to read it](#How-to-read-it)
-- [UI Testing Best Practices book](#UI-Testing-Best-Practices-book)
-- [Notes for the talk](#Notes-for-the-talk)
-
-<br />
-
-You can find the slides of the talk [here](https://slides.com/noriste/working-software-2019-mastering-ui-testing).
-
-## Goal of this repository
-
-I made this repository to follow up with the best practices I highlighted during my talk at the
-[Working Software conference](https://www.agilemovement.it/workingsoftware/).
 
 ## About this repository
 
@@ -134,26 +135,19 @@ I made this repository to follow up with the best practices I highlighted during
 - it runs the tests in Travis too to show a complete UI Testing project
 - all the code is well commented, with a lot of links to the slide explanations
 - I wrote the front-end app with a outside-in approach writing the acceptance test at the beginning.
-  I have not tested it manually at all! Remember to use your [testing tool as your primary development tool](https://slides.com/noriste/working-software-2019-mastering-ui-testing#testing-tool-as-development-tool)
-- the `talk` branch is helpful only for the day of the conference, do not consider it
+  I have not tested it manually at all!
 
 ## How to play with it
 
 There are four main commands:
 
-- `npm run start`: starts the (super simple) front-end app
-- `npm run start:server`: starts the (fake) back-end app
+- `npm run start`: starts the (super simple) front-end app and the (fake) back-end app
 - `npm run cy:open`: opens the Cypress UI
 - `npm test`: launches both the front-end and the back-end apps, and runs cypress in the non-visual
   mode. Remember killing the manually launched apps since it uses the same ports
 
-Please note: if you have the [Autolaunch
-extension](https://marketplace.visualstudio.com/items?itemName=philfontaine.autolaunch) for VS Code,
-it proposes you to launch these scripts automatically.
-
 ## How to read it
 
-- read the [slides of the talk](https://slides.com/noriste/working-software-2019-mastering-ui-testing)
 - launch the front-end app and take a look at the `src/App.js` file
 - launch both the back-end app and Cypress
 - launch the `authentication.integration.test.js` in Cypress and watch it running
@@ -165,13 +159,3 @@ it proposes you to launch these scripts automatically.
 
 Do not forge to add a star to my (work in progress) [UI Testing Best
 Practices](https://github.com/NoriSte/ui-testing-best-practices) book on GitHub 😊
-
-## Notes for the talk
-
-- checkout the `talk` branch
-- launch all the scripts except for `npx cypress open`
-- you will launch `npx cypress open` as soon as you start showing the code at the talk
-- show cypress and VSCode side-by-side on the same screen
-- prepare the browser opened on the slides
-- if you need, take a look at the `transcription.md` file on the `talk` branch
-- take a look at the ["How to Talk to Developers"](https://www.youtube.com/watch?v=l9JXH7JPjR4) talk by Ben Orenstein
