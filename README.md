@@ -7,6 +7,7 @@ TODO:
 - prepare the tests
 - check that renovate and travis are running
 - steps description
+- link to the original article
 
 ---
 
@@ -50,6 +51,25 @@ Examples:
 
 - retrieving and interacting with an element
 - asserting about an element visibility
+
+#### 4 - Debugging
+
+Debugging is typically hard in E2E testing. Cypress comes to the rescue with a lot of first-class utilities.
+
+Topics:
+
+- tests can be paused and resumed later
+- the Cypress Test Runner allows time-travelling: you can analyze the DOM at every test step
+- tests have not timeouts, commands have: if something goes wrong, you discover it as soon as possible, without waiting for the while test timeout
+- DOM-related errors: when interacting with an element is not possible, Cypress tells you the reason why
+- automatic screenshot and videos: in case of failures, watching a video is easier than reading the log
+
+Examples:
+
+- pausing a test programmatically
+- time travelling in action
+- DOM-related errors with a fixed div all over the contents
+- checking failure video
 
 ---
 
