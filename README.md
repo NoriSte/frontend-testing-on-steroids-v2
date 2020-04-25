@@ -13,7 +13,7 @@ Please note: this is the talk version of my ["Some UI testing problems and the C
 
 ## Talk walkthrough
 
-#### 1 - Cypress UI
+### 1 - Cypress UI
 
 Topics:
 
@@ -21,7 +21,7 @@ Topics:
 - the Cypress Test Runner UI: allows understanding what happens in the app and in Cypress
 - the Cypress [skip-and-only plugin](https://github.com/bahmutov/cypress-skip-and-only-ui): allows to add `skip` and `only` from the Test Runner
 
-#### 2 - Cypress works in the browser
+### 2 - Cypress works in the browser
 
 There is not an orchestrating Bash script and an orchestrated browser, the tests work directly in the browser.
 
@@ -38,7 +38,7 @@ Examples:
 - accessing document.window' properties from the test
 - rich assertion results are logged too
 
-#### 3 - Everything is async in UI testing
+### 3 - Everything is async in UI testing
 
 Everything is asynchronous by definition in browserland
 
@@ -52,7 +52,7 @@ Examples:
 - retrieving and interacting with an element
 - asserting about an element visibility
 
-#### 4 - Debugging
+### 4 - Debugging
 
 Debugging is typically hard in E2E testing. Cypress comes to the rescue with a lot of first-class utilities.
 
@@ -71,7 +71,7 @@ Examples:
 - DOM-related errors with a fixed div all over the contents
 - checking failure video
 
-#### 5 - UI Integration Tests
+### 5 - UI Integration Tests
 
 E2E Testing is not so important due to its complexity. With full network stubbing, testing only the front-end application is easy and profitable.
 
@@ -87,7 +87,7 @@ Examples:
 - happy path testing
 - edge case testing
 
-#### Productivity (without a dedicated branch)
+### Productivity (without a dedicated branch)
 
 Cypress can be used not only as a development tool but as even as the main development browser.
 
@@ -97,7 +97,7 @@ Topics:
 - debugging with Chrome devtools
 - installing the React and Redux devtools
 
-#### Bonus point (without a dedicated branch)
+### Bonus point (without a dedicated branch)
 
 To leverage Cypress' full potential and have stable and useful tests there are a lot of UI Testing best practices.
 
