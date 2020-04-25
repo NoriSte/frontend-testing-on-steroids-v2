@@ -50,9 +50,9 @@ context('Authentication', () => {
       url: `**${AUTHENTICATE_API_URL}`,
     }).as('auth-xhr')
 
-    cy.getByPlaceholderText(USERNAME_PLACEHOLDER).should('be.visible').type(username)
-    cy.getByPlaceholderText(PASSWORD_PLACEHOLDER).should('be.visible').type(password)
-    cy.getByText(LOGIN_BUTTON).should('be.visible').click()
+    cy.findByPlaceholderText(USERNAME_PLACEHOLDER).should('be.visible').type(username)
+    cy.findByPlaceholderText(PASSWORD_PLACEHOLDER).should('be.visible').type(password)
+    cy.findByText(LOGIN_BUTTON).should('be.visible').click()
 
     cy.wait('@auth-xhr').then((xhr) => {
       expect(xhr.request.body).to.have.property('username', username)
@@ -64,6 +64,6 @@ context('Authentication', () => {
       expect(xhr.response.body).to.have.property('token')
     })
 
-    cy.getByText(SUCCESS_FEEDBACK).should('be.visible')
+    cy.findByText(SUCCESS_FEEDBACK).should('be.visible')
   })
 })

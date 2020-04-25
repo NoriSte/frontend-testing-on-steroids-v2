@@ -41,15 +41,15 @@ context('Authentication', () => {
     }).as('auth-xhr')
 
     // retrieves the elements to interact with by contents, the same way the user would do so
-    cy.getByPlaceholderText(USERNAME_PLACEHOLDER)
+    cy.findByPlaceholderText(USERNAME_PLACEHOLDER)
       // in case of failures, a lot of assertions drive you directly to the exact problem that
       // occurred, making test debugging useless
       .should('be.visible')
       .type(username)
-    cy.getByPlaceholderText(PASSWORD_PLACEHOLDER)
+    cy.findByPlaceholderText(PASSWORD_PLACEHOLDER)
       .should('be.visible') // assertions FTW
       .type(password)
-    cy.getByText(LOGIN_BUTTON)
+    cy.findByText(LOGIN_BUTTON)
       .should('be.visible') // assertions FTW
       .click()
 
@@ -63,20 +63,20 @@ context('Authentication', () => {
     })
 
     // finally, the user must see the feedback
-    cy.getByText(SUCCESS_FEEDBACK).should('be.visible')
+    cy.findByText(SUCCESS_FEEDBACK).should('be.visible')
   })
 
   // from now on, it will use a shared function to fill the form.
   // Remember always to add simple abstractions because, test by test, you always need to slightly
   // change the behavior to test every flow.
   const fillFormAndClick = ({ username, password }) => {
-    cy.getByPlaceholderText(USERNAME_PLACEHOLDER)
+    cy.findByPlaceholderText(USERNAME_PLACEHOLDER)
       .should('be.visible') // assertions FTW
       .type(username)
-    cy.getByPlaceholderText(PASSWORD_PLACEHOLDER)
+    cy.findByPlaceholderText(PASSWORD_PLACEHOLDER)
       .should('be.visible') // assertions FTW
       .type(password)
-    cy.getByText(LOGIN_BUTTON)
+    cy.findByText(LOGIN_BUTTON)
       .should('be.visible') // assertions FTW
       .click()
   }
@@ -100,8 +100,8 @@ context('Authentication', () => {
     // moves forward the front-end clock, it allows to manage to force `setTimeout` to happen in a while
     cy.tick(1000)
 
-    cy.getByText(LOADING).should('be.visible')
-    cy.getByText(LONG_WAITING).should('be.visible')
+    cy.findByText(LOADING).should('be.visible')
+    cy.findByText(LONG_WAITING).should('be.visible')
   })
 
   it('should alert the user it the credentials are wrong', () => {
@@ -120,7 +120,7 @@ context('Authentication', () => {
       expect(xhr.request.body).to.have.property('password', password)
     })
 
-    cy.getByText(UNAUTHORIZED_ERROR).should('be.visible')
+    cy.findByText(UNAUTHORIZED_ERROR).should('be.visible')
   })
 
   it('should alert the user it the server does not work', () => {
@@ -133,9 +133,9 @@ context('Authentication', () => {
     }).as('auth-xhr')
 
     fillFormAndClick({ username, password })
-    cy.getByText(LOGIN_BUTTON).click()
+    cy.findByText(LOGIN_BUTTON).click()
 
-    cy.getByText(GENERIC_ERROR).should('be.visible')
+    cy.findByText(GENERIC_ERROR).should('be.visible')
   })
 
   // Other tests must not waste time with authentication, always allows them to authenticate as fast

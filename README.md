@@ -3,7 +3,9 @@ Front-end Testing on Steroids
 TODO:
 
 - check that renovate and travis are running
-- rebase all the branches on master at the end
+- work on the slides
+- read the egghead guide
+- test the talk
 
 ---
 
