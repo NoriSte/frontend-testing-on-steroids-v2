@@ -8,6 +8,7 @@ TODO:
 - check that renovate and travis are running
 - steps description
 - link to the original article
+- rebase all the branches on master at the end
 
 ---
 
