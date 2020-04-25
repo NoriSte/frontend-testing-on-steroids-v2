@@ -72,6 +72,22 @@ Examples:
 - DOM-related errors with a fixed div all over the contents
 - checking failure video
 
+#### 5 - UI Integration Tests
+
+E2E Testing is not so important due to its complexity. With full network stubbing, testing only the front-end application is easy and profitable.
+
+Topics:
+
+- full network stubbing
+- network error simulation
+
+Examples:
+
+- stubbing the wrong request: how a malformed stub could be detected with Cypress
+- stubbing the right request
+- happy path testing
+- edge case testing
+
 ---
 
 ---
