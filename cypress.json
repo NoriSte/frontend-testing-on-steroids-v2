@@ -1,5 +1,7 @@
 {
   "baseUrl": "http://localhost:3000/",
+  "viewportWidth": 300,
+  "viewportHeight": 600,
   "cypress-watch-and-reload": {
     "watch": "src/*"
   }
