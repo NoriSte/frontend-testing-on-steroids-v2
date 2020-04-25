@@ -24,6 +24,7 @@ button {
 .App-logo {
   height: 30vmin;
   max-height: 80px;
+  max-width: 80%;
   pointer-events: none;
   margin: 20px;
 }
