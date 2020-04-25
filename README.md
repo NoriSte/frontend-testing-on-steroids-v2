@@ -1,14 +1,3 @@
-Front-end Testing on Steroids
-
-TODO:
-
-- check that renovate and travis are running
-- work on the slides
-- read the egghead guide
-- test the talk
-
----
-
 # Front-end Testing on Steroids
 
 [![Build Status](https://travis-ci.com/NoriSte/frontend-testing-on-steroids.svg?branch=master)](https://travis-ci.com/NoriSte/frontend-testing-on-steroids)
