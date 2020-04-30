@@ -70,6 +70,20 @@ function App() {
     longWaiting,
   })
 
+  const animationEnd = 3
+  const delayElements = window.location.search.includes('delayElements=1')
+  const [animationStep, setAnimationStep] = React.useState(delayElements ? 0 : animationEnd)
+  const intervalId = React.useRef()
+  React.useEffect(() => {
+    if (!intervalId.current && animationStep < animationEnd) {
+      intervalId.current = setInterval(() => setAnimationStep(animationStep + 1), 1000)
+    }
+    return () => {
+      clearInterval(intervalId.current)
+      intervalId.current = undefined
+    }
+  }, [animationStep, setAnimationStep])
+
   return (
     <div className="App">
       {/* some companies to thank 😊 */}
@@ -79,18 +93,28 @@ function App() {
       {/* the app content to be tested */}
       <section className="App-body">
         <span>Please type</span>
-        <input
-          placeholder={USERNAME_PLACEHOLDER}
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          placeholder={PASSWORD_PLACEHOLDER}
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button onClick={() => authenticate(username, password)}>{LOGIN_BUTTON}</button>
+        {animationStep > 0 && (
+          <input
+            placeholder={USERNAME_PLACEHOLDER}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            data-testid={USERNAME_PLACEHOLDER}
+          />
+        )}
+        {animationStep > 1 && (
+          <input
+            placeholder={PASSWORD_PLACEHOLDER}
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            data-testid={PASSWORD_PLACEHOLDER}
+          />
+        )}
+        {animationStep > 2 && (
+          <button onClick={() => authenticate(username, password)} data-testid={LOGIN_BUTTON}>
+            {LOGIN_BUTTON}
+          </button>
+        )}
         {/* AJAX loading feedbacks */}
         <span>
           {loading && LOADING}
