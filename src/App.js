@@ -61,6 +61,15 @@ function App() {
     }
   }
 
+  console.log('%c Logging component state from the app ', 'background: #F8F8F8; color: #000', {
+    username,
+    password,
+    loading,
+    error,
+    success,
+    longWaiting,
+  })
+
   return (
     <div className="App">
       {/* some companies to thank 😊 */}
