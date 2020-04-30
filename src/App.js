@@ -84,8 +84,12 @@ function App() {
     }
   }, [animationStep, setAnimationStep])
 
+  const addFixedDiv = window.location.search.includes('fixeddiv=1')
+
   return (
     <div className="App">
+      {addFixedDiv && <div class="fixed">GDPR acceptance modal</div>}
+
       {/* some companies to thank 😊 */}
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
