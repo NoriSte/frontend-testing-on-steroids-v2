@@ -13,20 +13,14 @@ Please note: this is the talk version of my ["Some UI testing problems and the C
 
 ## Talk walkthrough
 
-### 1 - Cypress UI
-
-Topics:
-
-- the Cypress Test List UI: allows easy test selection
-- the Cypress Test Runner UI: allows understanding what happens in the app and in Cypress
-- the Cypress [skip-and-only plugin](https://github.com/bahmutov/cypress-skip-and-only-ui): allows to add `skip` and `only` from the Test Runner
-
-### 2 - Cypress works in the browser
+### 1 - Cypress works in the browser
 
 There is not an orchestrating Bash script and an orchestrated browser, the tests work directly in the browser.
 
 Topics:
 
+- the Cypress Test List UI: allows easy test selection
+- the Cypress Test Runner UI: allows understanding what happens in the app and in Cypress
 - everything works in the browser: you do not need to go back and forth from the Bash to the browser
 - everything is logged inside the browser' console: you do not need to aggregate logs anymore
 - easier command understanding: less tools means more trivial understanding and debugging
@@ -38,7 +32,7 @@ Examples:
 - accessing document.window' properties from the test
 - rich assertion results are logged too
 
-### 3 - Everything is async in UI testing
+### 2 - Everything is async in UI testing
 
 Everything is asynchronous by definition in browserland
 
@@ -52,7 +46,7 @@ Examples:
 - retrieving and interacting with an element
 - asserting about an element visibility
 
-### 4 - Debugging
+### 3 - Debugging
 
 Debugging is typically hard in E2E testing. Cypress comes to the rescue with a lot of first-class utilities.
 
@@ -71,7 +65,7 @@ Examples:
 - DOM-related errors with a fixed div all over the contents
 - checking failure video
 
-### 5 - UI Integration Tests
+### 4 - UI Integration Tests
 
 E2E Testing is not so important due to its complexity. With full network stubbing, testing only the front-end application is easy and profitable.
 
