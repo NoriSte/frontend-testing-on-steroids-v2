@@ -46,12 +46,8 @@ context('Authentication', () => {
       // occurred, making test debugging useless
       .should('be.visible')
       .type(username)
-    cy.findByPlaceholderText(PASSWORD_PLACEHOLDER)
-      .should('be.visible') // assertions FTW
-      .type(password)
-    cy.findByText(LOGIN_BUTTON)
-      .should('be.visible') // assertions FTW
-      .click()
+    cy.findByPlaceholderText(PASSWORD_PLACEHOLDER).type(password)
+    cy.findByText(LOGIN_BUTTON).click()
 
     // the AJAX request is a deterministic event, it MUST happen for the front-end app to work!
     // Asserting on deterministic events make your test more robust
@@ -70,15 +66,9 @@ context('Authentication', () => {
   // Remember always to add simple abstractions because, test by test, you always need to slightly
   // change the behavior to test every flow.
   const fillFormAndClick = ({ username, password }) => {
-    cy.findByPlaceholderText(USERNAME_PLACEHOLDER)
-      .should('be.visible') // assertions FTW
-      .type(username)
-    cy.findByPlaceholderText(PASSWORD_PLACEHOLDER)
-      .should('be.visible') // assertions FTW
-      .type(password)
-    cy.findByText(LOGIN_BUTTON)
-      .should('be.visible') // assertions FTW
-      .click()
+    cy.findByPlaceholderText(USERNAME_PLACEHOLDER).type(username)
+    cy.findByPlaceholderText(PASSWORD_PLACEHOLDER).type(password)
+    cy.findByText(LOGIN_BUTTON).click()
   }
 
   it('should alert the user it the login lasts long', () => {
