@@ -15,9 +15,7 @@
     "cy:open": "cypress open",
     "cy:test": "cypress run",
     "cy:test:integration": "cypress run --spec \"cypress/**/*.integration.*\"",
-    "cy:test:e2e": "cypress run --spec \"cypress/**/*.e2e.*\"",
-    "// UTILS /////////": "",
-    "talk:branches:rebase": "git switch master && git pull && git switch 1-cypress-ui && git rebase master && git switch 2-everything-works-in-the-browser && git rebase master && git switch 3-everything-is-async && git rebase master && git switch 4-debugging && git rebase master && git switch 5-ui-inegration-testing && git rebase master && git switch master && git push --all -f"
+    "cy:test:e2e": "cypress run --spec \"cypress/**/*.e2e.*\""
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -9,7 +9,7 @@ Status](https://img.shields.io/badge/build%20cron-weekly-44cc11.svg)](https://tr
 Why testing a front-end application is so hard? What are the main challenges you need to face? Why do the tests fail without a clear reason?
 This talk is about good testing best practices and the tool that is become the de-facto standard of UI Testing: Cypress.
 
-Please note: this is the talk version of my ["Some UI testing problems and the Cypress way"](https://dev.to/noriste/some-ui-testing-problems-and-the-cypress-way-1167) article.
+Please note: this is the spoken version of my ["Some UI testing problems and the Cypress way"](https://dev.to/noriste/some-ui-testing-problems-and-the-cypress-way-1167) article.
 
 ## Talk walkthrough
 
