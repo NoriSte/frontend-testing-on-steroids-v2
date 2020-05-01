@@ -102,7 +102,6 @@ function App() {
             placeholder={USERNAME_PLACEHOLDER}
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            data-testid={USERNAME_PLACEHOLDER}
           />
         )}
         {animationStep > 1 && (
@@ -111,13 +110,10 @@ function App() {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            data-testid={PASSWORD_PLACEHOLDER}
           />
         )}
         {animationStep > 2 && (
-          <button onClick={() => authenticate(username, password)} data-testid={LOGIN_BUTTON}>
-            {LOGIN_BUTTON}
-          </button>
+          <button onClick={() => authenticate(username, password)}>{LOGIN_BUTTON}</button>
         )}
         {/* AJAX loading feedbacks */}
         <span>

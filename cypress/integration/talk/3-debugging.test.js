@@ -4,21 +4,21 @@ context('Talk', () => {
   it.only('Pausing the test and time travelling', () => {
     cy.visit('/')
 
-    cy.get('[data-testid="Your username"]').type('smagni@workwave.com')
-    cy.get('[data-testid="Your password"]').type('wrongpassword')
+    cy.findByPlaceholderText('Your username').type('smagni@workwave.com')
+    cy.findByPlaceholderText('Your password').type('wrongpassword')
     cy.pause()
-    cy.get('[data-testid="Login"]').click()
+    cy.findByText('Login').click()
 
-    cy.contains('The credentials are wrong').should('be.visible')
+    cy.findByText('The credentials are wrong').should('be.visible')
   })
 
   it('DOM-related errors', () => {
     cy.visit('/?fixeddiv=1')
 
-    cy.get('[data-testid="Your username"]').type('smagni@workwave.com')
-    cy.get('[data-testid="Your password"]').type('wrongpassword')
-    cy.get('[data-testid="Login"]').click()
+    cy.findByPlaceholderText('Your username').type('smagni@workwave.com')
+    cy.findByPlaceholderText('Your password').type('wrongpassword')
+    cy.findByText('Login').click()
 
-    cy.contains('The credentials are wrong').should('be.visible')
+    cy.findByText('The credentials are wrong').should('be.visible')
   })
 })

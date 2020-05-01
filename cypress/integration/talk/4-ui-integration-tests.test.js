@@ -20,11 +20,11 @@ context('Authentication E2E', () => {
   })
 
   it('should work with the right credentials', () => {
-    cy.get('[data-testid="Your username"]').type(username)
-    cy.get('[data-testid="Your password"]').type(password)
-    cy.get('[data-testid="Login"]').click()
+    cy.findByPlaceholderText('Your username').type(username)
+    cy.findByPlaceholderText('Your password').type(password)
+    cy.findByText('Login').click()
 
-    cy.contains('Welcome back!').should('be.visible')
+    cy.findByText('Welcome back!').should('be.visible')
   })
 })
 
@@ -42,11 +42,11 @@ context('Authentication Integration', () => {
       url: `**/api/authentication`,
     })
 
-    cy.get('[data-testid="Your username"]').type(username)
-    cy.get('[data-testid="Your password"]').type(password)
-    cy.get('[data-testid="Login"]').click()
+    cy.findByPlaceholderText('Your username').type(username)
+    cy.findByPlaceholderText('Your password').type(password)
+    cy.findByText('Login').click()
 
-    cy.contains('Welcome back!').should('be.visible')
+    cy.findByText('Welcome back!').should('be.visible')
   })
 
   it('should alert the user it the credentials are wrong', () => {
@@ -57,9 +57,9 @@ context('Authentication Integration', () => {
       status: 401,
     }).as('auth-xhr')
 
-    cy.get('[data-testid="Your username"]').type(username)
-    cy.get('[data-testid="Your password"]').type(password)
-    cy.get('[data-testid="Login"]').click()
+    cy.findByPlaceholderText('Your username').type(username)
+    cy.findByPlaceholderText('Your password').type(password)
+    cy.findByText('Login').click()
 
     cy.findByText('The credentials are wrong').should('be.visible')
   })
