@@ -81,7 +81,7 @@ Examples:
 - happy path testing
 - edge case testing
 
-### Productivity (without a dedicated branch)
+### Productivity
 
 Cypress can be used not only as a development tool but as even as the main development browser.
 
@@ -91,7 +91,7 @@ Topics:
 - debugging with Chrome devtools
 - installing the React and Redux devtools
 
-### Bonus point (without a dedicated branch)
+### Bonus point
 
 To leverage Cypress' full potential and have stable and useful tests there are a lot of UI Testing best practices.
 
