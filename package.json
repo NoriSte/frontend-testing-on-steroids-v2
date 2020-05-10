@@ -45,7 +45,7 @@
     "@testing-library/cypress": "6.0.0",
     "cypress": "4.5.0",
     "cypress-skip-and-only-ui": "1.2.6",
-    "cypress-watch-and-reload": "1.2.15",
+    "cypress-watch-and-reload": "1.2.16",
     "nodemon": "2.0.3",
     "start-server-and-test": "1.11.0"
   }
