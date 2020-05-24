@@ -8,8 +8,8 @@ context('Authentication', () => {
 
     cy.route({
       method: 'POST',
-      response: {},
       url: `**/api/authentication`,
+      response: {},
       status: 401,
     }).as('auth-xhr')
 

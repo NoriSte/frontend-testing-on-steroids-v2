@@ -11,8 +11,8 @@ context('Authentication', () => {
 
     cy.route({
       method: 'POST',
-      response: 'fixture:authentication/authentication-success.json',
       url: `**/api/authentication`,
+      response: 'fixture:authentication/authentication-success.json',
     })
 
     cy.findByPlaceholderText('Your username').type(username)
