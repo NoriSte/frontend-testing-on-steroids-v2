@@ -52,7 +52,7 @@ context('Authentication', () => {
 
     cy.findByPlaceholderText(USERNAME_PLACEHOLDER).should('be.visible').type(username)
     cy.findByPlaceholderText(PASSWORD_PLACEHOLDER).should('be.visible').type(password)
-    cy.findByText(LOGIN_BUTTON).should('be.visible').click()
+    cy.findByRole('button', { name: LOGIN_BUTTON }).should('be.visible').click()
 
     cy.wait('@auth-xhr').then((xhr) => {
       expect(xhr.request.body).to.have.property('username', username)

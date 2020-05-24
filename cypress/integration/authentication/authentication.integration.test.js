@@ -47,7 +47,7 @@ context('Authentication', () => {
       .should('be.visible')
       .type(username)
     cy.findByPlaceholderText(PASSWORD_PLACEHOLDER).type(password)
-    cy.findByText(LOGIN_BUTTON).click()
+    cy.findByRole('button', { name: LOGIN_BUTTON }).click()
 
     // the AJAX request is a deterministic event, it MUST happen for the front-end app to work!
     // Asserting on deterministic events make your test more robust
@@ -68,7 +68,7 @@ context('Authentication', () => {
   const fillFormAndClick = ({ username, password }) => {
     cy.findByPlaceholderText(USERNAME_PLACEHOLDER).type(username)
     cy.findByPlaceholderText(PASSWORD_PLACEHOLDER).type(password)
-    cy.findByText(LOGIN_BUTTON).click()
+    cy.findByRole('button', { name: LOGIN_BUTTON }).click()
   }
 
   it('should alert the user it the login lasts long', () => {
@@ -123,7 +123,7 @@ context('Authentication', () => {
     }).as('auth-xhr')
 
     fillFormAndClick({ username, password })
-    cy.findByText(LOGIN_BUTTON).click()
+    cy.findByRole('button', { name: LOGIN_BUTTON }).click()
 
     cy.findByText(GENERIC_ERROR).should('be.visible')
   })
