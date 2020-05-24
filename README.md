@@ -1,4 +1,4 @@
-# Front-end Testing on Steroids
+# Front-end Testing on Steroids (V2)
 
 [![Build Status](https://travis-ci.com/NoriSte/frontend-testing-on-steroids.svg?branch=master)](https://travis-ci.com/NoriSte/frontend-testing-on-steroids)
 [![Build
@@ -6,106 +6,27 @@ Status](https://img.shields.io/badge/build%20cron-weekly-44cc11.svg)](https://tr
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 
-Why testing a front-end application is so hard? What are the main challenges you need to face? Why do the tests fail without a clear reason?
-This talk is about good testing best practices and the tool that is become the de-facto standard of UI Testing: Cypress.
+The [first version of this talk](https://github.com/NoriSte/frontend-testing-on-steroids) was about the main reasons that make UI Testing hard, this second part is more about how to leverage Cypress to improve front-end development productivity.
 
-Please note: this is the spoken version of my ["Some UI testing problems and the Cypress way"](https://dev.to/noriste/some-ui-testing-problems-and-the-cypress-way-1167) article.
+Please note: this is the spoken version of my ["Front-end productivity boost: Cypress as your main development browser"](https://dev.to/noriste/front-end-productivity-boost-cypress-as-your-main-development-browser-5cdk) article.
 
 ## Talk walkthrough
 
-### 1 - Cypress works in the browser
+- Replacing E2E tests with UI Integration tests
+- Controlling the clock to test long waitings in a while
+- Testing corner cases by simulating network requests failure
+- Leveraging Chrome and React DevTools in UI tests
+- Using Cypress as the main development browser
 
-There is not an orchestrating Bash script and an orchestrated browser, the tests work directly in the browser.
+During the talk, some interesting Cypress' features will be shown:
+- The Cypress UI
+- The amazing Test Runner
+- Actions are asynchronous by default
+- Elements retrieval by contents
+- The test and app use the same *console.log*
+- Time-travelling the test steps and pausing the test
 
-Topics:
-
-- the Cypress Test List UI: allows easy test selection
-- the Cypress Test Runner UI: allows understanding what happens in the app and in Cypress
-- everything works in the browser: you do not need to go back and forth from the Bash to the browser
-- everything is logged inside the browser' console: you do not need to aggregate logs anymore
-- easier command understanding: less tools means more trivial understanding and debugging
-
-Examples:
-
-- logging from the test
-- logging from the app
-- accessing document.window' properties from the test
-- rich assertion results are logged too
-
-### 2 - Everything is async in UI testing
-
-Everything is asynchronous by definition in browserland
-
-Topics:
-
-- there are not sync/async differences, everything is async by definition
-- automatic waiting
-
-Examples:
-
-- retrieving and interacting with an element
-- asserting about an element visibility
-
-### 3 - Debugging
-
-Debugging is typically hard in E2E testing. Cypress comes to the rescue with a lot of first-class utilities.
-
-Topics:
-
-- tests can be paused and resumed later
-- the Cypress Test Runner allows time-travelling: you can analyze the DOM at every test step
-- tests have not timeouts, commands have: if something goes wrong, you discover it as soon as possible, without waiting for the while test timeout
-- DOM-related errors: when interacting with an element is not possible, Cypress tells you the reason why
-- automatic screenshot and videos: in case of failures, watching a video is easier than reading the log
-
-Examples:
-
-- pausing a test programmatically
-- time travelling in action
-- DOM-related errors with a fixed div all over the contents
-- checking failure video
-
-### 4 - UI Integration Tests
-
-E2E Testing is not so important due to its complexity. With full network stubbing, testing only the front-end application is easy and profitable.
-
-Topics:
-
-- full network stubbing
-- network error simulation
-
-Examples:
-
-- stubbing the wrong request: how a malformed stub could be detected with Cypress
-- stubbing the right request
-- happy path testing
-- edge case testing
-
-### Productivity
-
-Cypress can be used not only as a development tool but as even as the main development browser.
-
-Topics:
-
-- automating manual interactions while developing
-- debugging with Chrome devtools
-- installing the React and Redux devtools
-
-### Bonus point
-
-To leverage Cypress' full potential and have stable and useful tests there are a lot of UI Testing best practices.
-
-Topics:
-
-- retrieving elements by their contents: consuming the app the same way the user does is really important in order to have user-centered tests
-- AJAX request and response assertions: asserting about AJAX requests alleviates test failure debugging
-- clock management: long duration tasks could be fastly tested by controlling browser clock
-- running E2E tests just for the happy path: running a limited number of E2E tests saves you a lot of time
-
-Examples:
-
-- full UI Integration tests
-- full E2E tests
+Take a look at the complete [authentication.e2e.test](./cypress/integration/authentication/authentication.e2e.test.js) test and the [authentication.integration.test](./cypress/integration/authentication/authentication.integration.test.js) one. They contains everything shown in the talk and a lot of comments.
 
 ---
 
