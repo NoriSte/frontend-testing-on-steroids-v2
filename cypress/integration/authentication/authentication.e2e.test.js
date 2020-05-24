@@ -16,16 +16,10 @@ context('Authentication', () => {
   before(() => {
     // E2E tests need to have credible data. Always wipe the previous tests data BEFORE the test
     // because to avoid the possibility of test failure because of not-ready data
-    cy.request('POST', `${SERVER_URL}/e2e-tests/wipe-data`, {
-      username,
-      password,
-    })
+    cy.request('POST', `${SERVER_URL}/e2e-tests/wipe-data`)
 
     //  E2E tests need to have credible data.
-    cy.request('POST', `${SERVER_URL}/e2e-tests/seed-data`, {
-      username,
-      password,
-    })
+    cy.request('POST', `${SERVER_URL}/e2e-tests/seed-data`, { username, password })
   })
 
   beforeEach(() => {
