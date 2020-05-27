@@ -6,7 +6,10 @@ context('Authentication', () => {
 
   before(() => {
     cy.request('POST', `http://localhost:3001/e2e-tests/wipe-data`)
-    cy.request('POST', `http://localhost:3001/e2e-tests/seed-data`, { username, password })
+    cy.request('POST', `http://localhost:3001/e2e-tests/seed-data`, {
+      username,
+      password,
+    })
   })
 
   it('should work with the right credentials', () => {
