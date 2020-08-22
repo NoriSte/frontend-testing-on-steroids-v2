@@ -8,7 +8,7 @@ context('Authentication', () => {
     cy.server()
     cy.visit('/')
 
-    cy.clock()
+    // cy.clock()
 
     cy.route({
       method: 'POST',
@@ -21,7 +21,7 @@ context('Authentication', () => {
     cy.findByPlaceholderText('Your password').type('mysupersecretpassword')
     cy.findByRole('button', { name: 'Login' }).click()
 
-    cy.tick(1000)
+    // cy.tick(1000)
 
     cy.findByText('Loading').should('be.visible')
     cy.findByText('Be patient...').should('be.visible')
